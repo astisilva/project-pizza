@@ -5,7 +5,7 @@
 alert(`Welcome to our Javascript Pizzeria. Ready to Start? - Click 'OK' to begin.`);
 
 const costumerName = prompt(`Hello please tell me your name`);
-alert(`Hello ${costumerName}`);
+alert(`Hello, nice to meet you ${costumerName}!`);
 
 // Step 2 - Food choice
 // Your code goes here
@@ -17,20 +17,62 @@ const foodChoice = prompt(
 3 - Salad`
 );
 
-let yourFoodChoice;
+let yourFoodChoice = '';
 
 if (foodChoice === '1') {
-  yourFoodChoice = alert(`you chose pizza`);
+  yourFoodChoice = 'Pizza';
 } else if (foodChoice === '2') {
-  yourFoodChoice = alert(`you chose pasta`);
+  yourFoodChoice = `Pasta`;
 } else if (foodChoice === '3') {
-  yourFoodChoice = alert(`you chose Salad`);
+  yourFoodChoice = `Salad`;
 } else {
-  alert(`Please enter a number between 1 and 3`);
+  alert(`Invalid choice. Please enter a number between 1 and 3`);
+  process.exit(1);
 }
+
+alert(`you have chosen ${yourFoodChoice} `);
 
 // Step 3 - Subtype choice
 // Your code goes here
+let subType = '';
+let foodsubType = [];
+
+switch (yourFoodChoice) {
+  case 'Pizza':
+    subType = prompt(
+      `select subtype for your pizza please enter the number  of your choice: 
+      1 - Pepperoni
+      2 - Vesuvio
+      3 - Margarita `
+    );
+    foodsubType = ['Pepperoni', 'Vesuvio', 'Margarita'];
+    break;
+
+  case 'Pasta':
+    subType = prompt(
+      `select subtype for your pasta please enter the number  of your choice: 
+      1 - Chicken
+      2 - Salami
+      3 - Mozzarella`
+    );
+    foodsubType = ['Chicken', 'Salami', 'Mozzarella'];
+    break;
+
+  case 'Salad':
+    subType = prompt(`select subtype for your salad please enter the number  of your choice: 
+      1 - Halloumi
+      2 - Feta
+      3 - Caesar Salad`);
+    foodsubType = ['Halloumi', 'Feta', 'Caesar Salad'];
+    break;
+
+  default:
+    alert(`Invalid choice, please start again and select a subtype for your food, Bye 👋`);
+    process.exit(1);
+}
+
+subType = parseInt(subType); // SubType is a string so I have to converte it to a number
+alert(`You have chosen ${foodsubType[subType - 1]} for your ${yourFoodChoice} `);
 
 // Step 4 - Age
 // Your code goes here
