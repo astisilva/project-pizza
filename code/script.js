@@ -62,7 +62,7 @@ switch (yourFoodChoice) {
     subType = prompt(`select subtype for your salad please enter the number  of your choice: 
       1 - Halloumi
       2 - Feta
-      3 - Caesar Salad`);
+      3 - Caesar`);
     foodsubType = ['Halloumi', 'Feta', 'Caesar Salad'];
     break;
 
@@ -71,11 +71,28 @@ switch (yourFoodChoice) {
     process.exit(1);
 }
 
-subType = parseInt(subType); // SubType is a string so I have to converte it to a number
-alert(`You have chosen ${foodsubType[subType - 1]} for your ${yourFoodChoice} `);
+subType = parseInt(subType); // SubType is a string so I have to convert it to a number
+alert(`You have chosen ${foodsubType[subType - 1]}  ${yourFoodChoice} `);
 
 // Step 4 - Age
 // Your code goes here
+
+const costumerAge = parseInt(prompt(`Is this food for child or an adult? Type your age:`));
+
+let orderCost;
+if (costumerAge <= 17) {
+  orderCostMessage = `One child  ${
+    foodsubType[subType - 1]
+  } ${yourFoodChoice} will be prepared for you that will be €10. Are you sure you want to order this`;
+  console.log('your choice', foodsubType[subType - 1], yourFoodChoice);
+} else if (costumerAge >= 18) {
+  orderCostMessage = `One Adult ${
+    foodsubType[subType - 1]
+  } ${yourFoodChoice} will be prepared for you that will be €15. Are you sure you want to order this`;
+  console.log('your choice', foodsubType[subType - 1], yourFoodChoice);
+} else {
+  alert('Invalid age choice. Please type a number.');
+}
 
 // Step 5 - Order confirmation
 // Your code goes here
