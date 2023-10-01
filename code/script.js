@@ -18,7 +18,6 @@ const foodChoice = prompt(
 );
 
 let yourFoodChoice = '';
-
 if (foodChoice === '1') {
   yourFoodChoice = 'Pizza';
 } else if (foodChoice === '2') {
@@ -76,7 +75,6 @@ alert(`You have chosen ${foodsubType[subType - 1]}  ${yourFoodChoice} `);
 
 // Step 4 - Age
 // Your code goes here
-
 const costumerAge = parseInt(prompt(`Is this food for child or an adult? Type your age:`));
 
 let orderCost;
@@ -84,15 +82,29 @@ if (costumerAge <= 17) {
   orderCostMessage = `One child  ${
     foodsubType[subType - 1]
   } ${yourFoodChoice} will be prepared for you that will be €10. Are you sure you want to order this`;
-  console.log('your choice', foodsubType[subType - 1], yourFoodChoice);
 } else if (costumerAge >= 18) {
   orderCostMessage = `One Adult ${
     foodsubType[subType - 1]
   } ${yourFoodChoice} will be prepared for you that will be €15. Are you sure you want to order this`;
-  console.log('your choice', foodsubType[subType - 1], yourFoodChoice);
 } else {
   alert('Invalid age choice. Please type a number.');
 }
 
 // Step 5 - Order confirmation
 // Your code goes here
+
+const orderConfirmation = parseInt(
+  prompt(`${orderCostMessage}
+Enter a number to confirm: 
+        1 - Yes
+        2 - No
+`)
+);
+
+if (orderConfirmation === 1) {
+  alert('Thank you for your order! Your delicious meal will be prepared. See you soon! 👋');
+} else if (orderConfirmation === 2) {
+  alert('No problem come back and order anytime you want');
+} else {
+  alert('Invalid choice. Please select 1 for Yes or 2 for No');
+}
