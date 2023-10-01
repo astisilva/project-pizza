@@ -23,3 +23,5 @@ Describe how you approached to problem, and what tools and techniques you used t
 Have you deployed your project somewhere? Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about
 
 - Im trying to deploy it to Netlify, but Im having problem with seeing the project, so Im going to google the problem! And then test the site and make sure it works!
+
+And now it´s on Netlify and works!
