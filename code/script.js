@@ -62,7 +62,7 @@ switch (yourFoodChoice) {
       1 - Halloumi
       2 - Feta
       3 - Caesar`);
-    foodsubType = ['Halloumi', 'Feta', 'Caesar Salad'];
+    foodsubType = ['Halloumi', 'Feta', 'Caesar'];
     break;
 
   default:
@@ -97,8 +97,7 @@ const orderConfirmation = parseInt(
   prompt(`${orderCostMessage}
 Enter a number to confirm: 
         1 - Yes
-        2 - No
-`)
+        2 - No`)
 );
 
 if (orderConfirmation === 1) {
